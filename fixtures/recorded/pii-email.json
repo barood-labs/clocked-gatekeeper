@@ -1,0 +1,182 @@
+{
+  "sampleId": "pii-email",
+  "kind": "email",
+  "textSha256": "9139b5892b9f1faf52a97e89ec2143496cadc9bb820934a6b1af84727e338732",
+  "recordedAt": "2026-11-10T15:48:31.115Z",
+  "decision": "pass",
+  "usage": {
+    "modelMs": "272.883167",
+    "credits": "11",
+    "costUsd": "0.002191",
+    "costBasis": "reference",
+    "transport": "door:east"
+  },
+  "response": {
+    "model": "clocked-1.0",
+    "steps": [
+      {
+        "step": 0,
+        "endpoint": "pii",
+        "name": "protect",
+        "status": 200,
+        "ms": 250,
+        "result": {
+          "model": "clocked-1.0",
+          "entities": [
+            {
+              "type": "email",
+              "value": "jordan.hale@example.com",
+              "start": 6,
+              "end": 29,
+              "confidence": 1,
+              "source": "model",
+              "mentions": 2
+            },
+            {
+              "type": "person",
+              "value": "Jordan Hale",
+              "start": 91,
+              "end": 102,
+              "confidence": 1,
+              "source": "model",
+              "mentions": 1
+            },
+            {
+              "type": "phone",
+              "value": "+1 415 555 0148",
+              "start": 152,
+              "end": 167,
+              "confidence": 0.717,
+              "source": "model",
+              "mentions": 1
+            },
+            {
+              "type": "email",
+              "value": "jordan.hale@example.com",
+              "start": 193,
+              "end": 216,
+              "confidence": 1,
+              "source": "mention",
+              "form": "exact",
+              "variant_of": "jordan.hale@example.com"
+            },
+            {
+              "type": "bank_account",
+              "value": "000998877665",
+              "start": 249,
+              "end": 261,
+              "confidence": 1,
+              "source": "model",
+              "mentions": 1
+            },
+            {
+              "type": "ssn",
+              "value": "219-09-9999",
+              "start": 283,
+              "end": 294,
+              "confidence": 1,
+              "source": "model",
+              "mentions": 1
+            },
+            {
+              "type": "date_of_birth",
+              "value": "4 July 1991",
+              "start": 311,
+              "end": 322,
+              "confidence": 1,
+              "source": "model",
+              "mentions": 1
+            },
+            {
+              "type": "address",
+              "value": "1000 Example Avenue, Springfield, IL 62704",
+              "start": 333,
+              "end": 375,
+              "confidence": 1,
+              "source": "model",
+              "mentions": 1
+            }
+          ],
+          "counts": {
+            "email": 2,
+            "person": 1,
+            "phone": 1,
+            "bank_account": 1,
+            "ssn": 1,
+            "date_of_birth": 1,
+            "address": 1
+          },
+          "threshold": 0.5,
+          "instructions_used": "custom",
+          "mentions": {
+            "candidates": 1,
+            "variants": 0,
+            "reads": 0,
+            "verified": 0,
+            "occurrences": {
+              "read": 0,
+              "kept": 0
+            },
+            "rejected": {},
+            "spans": 1,
+            "ms": 0
+          },
+          "checks": {
+            "trimmed": 0,
+            "split": 0,
+            "rejected": {}
+          },
+          "anonymized_text": "From: *********************om\nSubject: Expense reimbursement (fictional demo)\n\nHi, this is *********le. Please reimburse the client dinner.\nMy phone is *************48 and my personal email is *********************om.\nDirect deposit to bank account **********65.\nSSN for the form is *********99.\nDate of birth: *********91.\nAddress: ****************************************04.\n",
+          "timing": {
+            "read_ms": 249,
+            "total_ms": 250
+          }
+        }
+      },
+      {
+        "step": 1,
+        "endpoint": "injection",
+        "name": "guard",
+        "status": 200,
+        "ms": 29,
+        "result": {
+          "model": "clocked-1.0",
+          "injection": 0.043610043799575005,
+          "verdict": "benign",
+          "threshold": 0.5,
+          "source": "content",
+          "instructions_used": "custom",
+          "category": "benign",
+          "categories": {
+            "benign": 0.8521305691391585,
+            "instruction override": 0.010232545322917716,
+            "role-play or persona jailbreak": 0.0097965771179982,
+            "system prompt or secret extraction": 0.011935758866046016,
+            "obfuscated or encoded payload": 0.014963386500211744,
+            "tool misuse or data exfiltration": 0.014412503530046342,
+            "social engineering": 0.08652865952362147
+          },
+          "severity": "none",
+          "severity_expected": 1.086,
+          "severities": {
+            "none": 0.957990585349812,
+            "low": 0.020712543274127915,
+            "medium": 0.007030617105677639,
+            "high": 0.005935832595118505,
+            "critical": 0.00833042167526398
+          },
+          "evidence": [],
+          "timing": {
+            "read_ms": 29,
+            "total_ms": 29
+          }
+        }
+      }
+    ],
+    "stopped": null,
+    "timing": {
+      "total_ms": 280,
+      "model_ms": 0
+    }
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "sampleId": "arabic-pii",
+  "kind": "message",
+  "textSha256": "df0210fcdaf236dae09dce8f1284f4ab008cb38bf04f06674c78f0ccd9ff9318",
+  "recordedAt": "2026-11-10T15:48:32.524Z",
+  "decision": "pass",
+  "usage": {
+    "modelMs": "191.513126",
+    "credits": "8",
+    "costUsd": "0.001594",
+    "costBasis": "reference",
+    "transport": "door:east"
+  },
+  "response": {
+    "model": "clocked-1.0",
+    "steps": [
+      {
+        "step": 0,
+        "endpoint": "pii",
+        "name": "protect",
+        "status": 200,
+        "ms": 170,
+        "result": {
+          "model": "clocked-1.0",
+          "entities": [
+            {
+              "type": "person",
+              "value": "\u0641\u0627\u0637\u0645\u0629 \u0627\u0644\u062d\u0633\u0646",
+              "start": 4,
+              "end": 15,
+              "confidence": 1,
+              "source": "model",
+              "mentions": 2
+            },
+            {
+              "type": "email",
+              "value": "fatima.alhassan@example.com",
+              "start": 17,
+              "end": 44,
+              "confidence": 1,
+              "source": "model",
+              "mentions": 1
+            },
+            {
+              "type": "person",
+              "value": "\u0641\u0627\u0637\u0645\u0629 \u0627\u0644\u062d\u0633\u0646",
+              "start": 103,
+              "end": 114,
+              "confidence": 1,
+              "source": "mention",
+              "form": "exact",
+              "variant_of": "\u0641\u0627\u0637\u0645\u0629 \u0627\u0644\u062d\u0633\u0646"
+            },
+            {
+              "type": "phone",
+              "value": "+966 55 000 1122",
+              "start": 122,
+              "end": 138,
+              "confidence": 0.663,
+              "source": "model",
+              "mentions": 1
+            },
+            {
+              "type": "ssn",
+              "value": "1000000007",
+              "start": 203,
+              "end": 213,
+              "confidence": 1,
+              "source": "model",
+              "mentions": 1
+            }
+          ],
+          "counts": {
+            "person": 2,
+            "email": 1,
+            "phone": 1,
+            "ssn": 1
+          },
+          "threshold": 0.5,
+          "instructions_used": "custom",
+          "mentions": {
+            "candidates": 1,
+            "variants": 0,
+            "reads": 0,
+            "verified": 0,
+            "occurrences": {
+              "read": 0,
+              "kept": 0
+            },
+            "rejected": {},
+            "spans": 1,
+            "ms": 0
+          },
+          "checks": {
+            "trimmed": 0,
+            "split": 0,
+            "rejected": {}
+          },
+          "anonymized_text": "\u0645\u0646: *********\u0633\u0646 <*************************om>\n\u0625\u0644\u0649: \u0645\u0643\u062a\u0628 \u0627\u0644\u062f\u0639\u0645\n\u0627\u0644\u0645\u0648\u0636\u0648\u0639: \u0625\u0639\u0627\u062f\u0629 \u062a\u0639\u064a\u064a\u0646 \u0627\u0644\u062f\u062e\u0648\u0644\n\n\u0645\u0631\u062d\u0628\u0627\u064b\u060c \u0623\u0646\u0627 *********\u0633\u0646. \u0647\u0627\u062a\u0641\u064a **************22. \u0623\u0631\u062c\u0648 \u0625\u0639\u0627\u062f\u0629 \u062a\u0639\u064a\u064a\u0646 \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631.\n\u0631\u0642\u0645 \u0627\u0644\u0647\u0648\u064a\u0629 (\u0628\u064a\u0627\u0646\u0627\u062a \u0648\u0647\u0645\u064a\u0629 \u0644\u0644\u0639\u0631\u0636): ********07.\n\u0634\u0643\u0631\u0627\u064b \u0644\u0643\u0645.\n",
+          "timing": {
+            "read_ms": 168,
+            "total_ms": 169
+          }
+        }
+      },
+      {
+        "step": 1,
+        "endpoint": "injection",
+        "name": "guard",
+        "status": 200,
+        "ms": 28,
+        "result": {
+          "model": "clocked-1.0",
+          "injection": 0.002183779455559809,
+          "verdict": "benign",
+          "threshold": 0.5,
+          "source": "user",
+          "instructions_used": "custom",
+          "category": "benign",
+          "categories": {
+            "benign": 0.9383765994675514,
+            "instruction override": 0.006657755156076367,
+            "role-play or persona jailbreak": 0.003941028941593865,
+            "system prompt or secret extraction": 0.0050665069649965455,
+            "obfuscated or encoded payload": 0.004371375707380962,
+            "tool misuse or data exfiltration": 0.007864466508931849,
+            "social engineering": 0.03372226725346905
+          },
+          "severity": "none",
+          "severity_expected": 1.038,
+          "severities": {
+            "none": 0.9817148325039774,
+            "low": 0.009366900000641932,
+            "medium": 0.0023674649755262953,
+            "high": 0.0022910715146419046,
+            "critical": 0.004259731005212471
+          },
+          "evidence": [],
+          "timing": {
+            "read_ms": 28,
+            "total_ms": 28
+          }
+        }
+      }
+    ],
+    "stopped": null,
+    "timing": {
+      "total_ms": 198,
+      "model_ms": 0
+    }
+  }
+}

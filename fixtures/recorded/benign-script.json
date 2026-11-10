@@ -1,0 +1,142 @@
+{
+  "sampleId": "benign-script",
+  "kind": "script",
+  "textSha256": "53c649a5a390657f1ab8b4bf222bd015bf9da0a2d9a2debe3e512ef8c3c38852",
+  "recordedAt": "2026-11-10T15:48:31.846Z",
+  "decision": "pass",
+  "usage": {
+    "modelMs": "110.499231",
+    "credits": "5",
+    "costUsd": "0.000996",
+    "costBasis": "reference",
+    "transport": "door:east"
+  },
+  "response": {
+    "model": "clocked-1.0",
+    "steps": [
+      {
+        "step": 0,
+        "endpoint": "pii",
+        "name": "protect",
+        "status": 200,
+        "ms": 31,
+        "result": {
+          "model": "clocked-1.0",
+          "entities": [],
+          "counts": {},
+          "threshold": 0.5,
+          "instructions_used": "custom",
+          "mentions": {
+            "candidates": 0,
+            "variants": 0,
+            "reads": 0,
+            "verified": 0,
+            "occurrences": {
+              "read": 0,
+              "kept": 0
+            },
+            "rejected": {},
+            "spans": 0,
+            "ms": 0
+          },
+          "checks": {
+            "trimmed": 0,
+            "split": 0,
+            "rejected": {}
+          },
+          "anonymized_text": "#!/bin/bash\n# Approved change CHG-204. Read the local print queue only.\nlpstat -p\nlpstat -o\n",
+          "timing": {
+            "read_ms": 31,
+            "total_ms": 31
+          }
+        }
+      },
+      {
+        "step": 1,
+        "endpoint": "injection",
+        "name": "guard",
+        "status": 200,
+        "ms": 28,
+        "result": {
+          "model": "clocked-1.0",
+          "injection": 0.27431851582576605,
+          "verdict": "benign",
+          "threshold": 0.5,
+          "source": "content",
+          "instructions_used": "custom",
+          "category": "benign",
+          "categories": {
+            "benign": 0.5302696126785817,
+            "instruction override": 0.12882745037197071,
+            "role-play or persona jailbreak": 0.015325195565162535,
+            "system prompt or secret extraction": 0.09140742233196969,
+            "obfuscated or encoded payload": 0.029860105071871444,
+            "tool misuse or data exfiltration": 0.17813705073569241,
+            "social engineering": 0.02617316324475142
+          },
+          "severity": "none",
+          "severity_expected": 1.707,
+          "severities": {
+            "none": 0.5835793272202997,
+            "low": 0.2533390401991795,
+            "medium": 0.07334244160757157,
+            "high": 0.05188024740799558,
+            "critical": 0.03785894356495357
+          },
+          "evidence": [],
+          "timing": {
+            "read_ms": 28,
+            "total_ms": 28
+          }
+        }
+      },
+      {
+        "step": 2,
+        "endpoint": "script",
+        "name": "inspect",
+        "status": 200,
+        "ms": 57,
+        "result": {
+          "model": "clocked-1.0",
+          "malicious": 0.0037727264685849526,
+          "suspicious": 0.0148,
+          "verdict": "benign",
+          "threshold": 0.5,
+          "instructions_used": "custom",
+          "category": "benign administration",
+          "categories": {
+            "benign administration": 0.9852275365795446,
+            "security blinding or EDR evasion": 0.0014943804776561202,
+            "credential theft or memory dumping": 0.002425912999444061,
+            "unauthorized persistence or access expansion": 0.0010620681575275205,
+            "network reconnaissance or tunneling": 0.0010552710642140759,
+            "forensic destruction or anti-forensics": 0.0017284421055487125,
+            "ransomware or data destruction": 0.001550694917626625,
+            "obfuscated or in-memory payload": 0.002242995582590138,
+            "unsafe download or remote code execution": 0.0014719549381929874,
+            "data exfiltration": 0.0017407431776551112
+          },
+          "severity": "none",
+          "severity_expected": 1.451,
+          "severities": {
+            "none": 0.5857861206016026,
+            "low": 0.39660227518534563,
+            "medium": 0.005159215647834237,
+            "high": 0.006056117098063009,
+            "critical": 0.00639627146715444
+          },
+          "evidence": [],
+          "timing": {
+            "read_ms": 57,
+            "total_ms": 57
+          }
+        }
+      }
+    ],
+    "stopped": null,
+    "timing": {
+      "total_ms": 118,
+      "model_ms": 0
+    }
+  }
+}
