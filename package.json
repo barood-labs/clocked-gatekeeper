@@ -1,0 +1,21 @@
+{
+  "name": "gatekeeper",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Safety airlock that screens untrusted text with Clocked Protect, Guard, and Inspect before it reaches an assistant.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test",
+    "cli": "node cli.js",
+    "record-fixtures": "node scripts/record-fixtures.js",
+    "demo": "node scripts/demo.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.65.0"
+  }
+}
