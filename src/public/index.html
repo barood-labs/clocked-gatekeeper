@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gatekeeper</title>
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,560;1,9..144,640&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <span class="mark" aria-hidden="true"></span>
+        <div>
+          <p class="eyebrow" id="eyebrow">Built for the Clocked Build Challenge 2026</p>
+          <h1 id="product">Gatekeeper</h1>
+        </div>
+      </div>
+      <p class="tagline" id="tagline">A safety airlock in front of your assistant.</p>
+      <div class="header-actions">
+        <p class="mode" id="mode" data-mode="fixture">Fixture</p>
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="ar" aria-pressed="false">عربي</button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="intake" aria-labelledby="intake-title">
+        <div class="intake-top">
+          <h2 id="intake-title">Intake</h2>
+          <p class="hint" id="kind-label">What is this?</p>
+          <div class="kinds" id="kinds" role="radiogroup"></div>
+          <p class="hint" id="samples-label">Samples</p>
+          <div class="samples" id="samples"></div>
+        </div>
+        <textarea id="text" spellcheck="false" dir="auto"></textarea>
+        <div class="actions">
+          <button type="button" id="screen" data-action="screen">Screen</button>
+          <button type="button" id="run-all" class="ghost">Screen all samples</button>
+          <span id="count" class="count"></span>
+        </div>
+        <details id="drills">
+          <summary id="drills-summary">Resilience drill</summary>
+          <p id="drills-copy"></p>
+          <div class="drill-row">
+            <button type="button" data-drill="timeout">Timeout</button>
+            <button type="button" data-drill="flaky">Flaky 500</button>
+            <button type="button" data-drill="unauthorized">401</button>
+            <button type="button" data-drill="guard-failed">Guard step fails</button>
+          </div>
+        </details>
+        <div class="audit">
+          <div class="audit-head">
+            <h2 id="audit-title">Audit log</h2>
+            <button type="button" id="clear-audit" class="texty">Clear</button>
+          </div>
+          <ol id="audit"></ol>
+        </div>
+      </section>
+      <section class="stage" id="stage" data-state="empty" aria-live="polite"></section>
+    </main>
+    <script src="/app.js"></script>
+    <noscript>Gatekeeper needs JavaScript to screen a text and draw the decision.</noscript>
+  </body>
+</html>
